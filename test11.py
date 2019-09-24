@@ -11,15 +11,19 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
+    
+    
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(400, 300)
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(70, 80, 75, 23))
-        self.pushButton.setObjectName("pushButton")
-        self.toolButton = QtWidgets.QToolButton(Form)
-        self.toolButton.setGeometry(QtCore.QRect(150, 160, 25, 19))
-        self.toolButton.setObjectName("toolButton")
+        self.label1= QtWidgets.QLabel(Form)
+        self.label1.setGeometry(QtCore.QRect(10, 10, 80, 15))
+        self.pushButton1 = QtWidgets.QPushButton(Form)
+        self.pushButton1.setGeometry(QtCore.QRect(70, 80, 75, 23))
+        self.pushButton1.setObjectName("pushButton1")
+        self.pushButton2 = QtWidgets.QToolButton(Form)
+        self.pushButton2.setGeometry(QtCore.QRect(150, 160, 25, 19))
+        self.pushButton2.setObjectName("pushButton2")
         self.verticalSlider = QtWidgets.QSlider(Form)
         self.verticalSlider.setGeometry(QtCore.QRect(230, 70, 22, 160))
         self.verticalSlider.setOrientation(QtCore.Qt.Vertical)
@@ -35,9 +39,13 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.pushButton.setText(_translate("Form", "PushButton"))
-        self.toolButton.setText(_translate("Form", "..."))
+        self.pushButton1.setText(_translate("Form", "PushButton"))
+        self.pushButton1.clicked.connect(self.clicked)
+        self.pushButton2.setText(_translate("Form", "BIIB"))
 
+    def clicked(self):
+        print("basilmistir")
+        self.label1.setText("buton basilmistir")
 
 if __name__ == "__main__":
     import sys
