@@ -34,6 +34,7 @@ class Ui_Form(object):
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
 
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -43,11 +44,16 @@ class Ui_Form(object):
         self.pushButton1.setText(_translate("Form", "PushButton"))
         self.pushButton1.clicked.connect(self.clicked)
         self.pushButton2.setText(_translate("Form", "BIIB"))
+        #self.horizontalSlider.valueChanged.connect(self.valuechange)
+
 
     def clicked(self):
         self.x=self.x+1
         self.label1.setGeometry((QtCore.QRect(10+self.x, 10+self.x, 80+self.x, 15+self.x)))
-        
+        size = self.horizontalSlider.value()
+        print(size)  
+
+          
 
 if __name__ == "__main__":
     import sys
