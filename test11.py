@@ -12,12 +12,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     
-    
+    x=0
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(400, 300)
         self.label1= QtWidgets.QLabel(Form)
         self.label1.setGeometry(QtCore.QRect(10, 10, 80, 15))
+        self.label1.setText("buton basilmistir")
         self.pushButton1 = QtWidgets.QPushButton(Form)
         self.pushButton1.setGeometry(QtCore.QRect(70, 80, 75, 23))
         self.pushButton1.setObjectName("pushButton1")
@@ -44,8 +45,9 @@ class Ui_Form(object):
         self.pushButton2.setText(_translate("Form", "BIIB"))
 
     def clicked(self):
-        print("basilmistir")
-        self.label1.setText("buton basilmistir")
+        self.x=self.x+1
+        self.label1.setGeometry((QtCore.QRect(10+self.x, 10+self.x, 80+self.x, 15+self.x)))
+        
 
 if __name__ == "__main__":
     import sys
